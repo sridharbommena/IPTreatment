@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>    
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="../../../../assets/Hospital-Logo.png" class="logo">
+        </div>
+
+        <ul class="list-unstyled components">
+            
+            <li>
+                <a routerLink="specialists">Specialists</a>
+            </li>
+            <li>
+                <a routerLink="treatment-packages">Service Packages</a>
+            </li>
+            <li>
+                <a routerLink="register-patient">Register Patient</a>
+            </li>
+            <li>
+                <a routerLink="treatment-plan">Treatment Plan</a>
+            </li>
+            <li>
+                <a routerLink="active-patients">Active Patients</a>
+            </li>
+            <li>
+                <a routerLink="inactive-patients">Inactive Patients</a>
+            </li>
+            <li>
+                <a routerLink="insurers">Insurers</a>
+            </li>
+            <li>
+                <a (click)="doLogOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+            </li>
+        </ul>
+    </nav>

@@ -1,0 +1,31 @@
+<div>
+    <h3 class="text-center" style="color: #6d7fcc;">List Of InActive Patients</h3>
+    <br>
+    <div>
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Patients Name</th>
+                    <th>Age</th>
+                    <th>Ailments</th>
+                    <th>Package Name</th>
+                    <th>Treatment End Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let patient of patients">
+                    <td class="counterCell"></td>
+                    <td>{{patient.patientDetails.name}}</td>
+                    <td>{{patient.patientDetails.age}}</td>
+                    <td>{{patient.patientDetails.ailment}}
+                    <td>{{patient.patientDetails.treatmentPackageName}}</td>
+                    <td>{{patient.treatmentEndDate}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

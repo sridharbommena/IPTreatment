@@ -1,0 +1,65 @@
+<div id="content">
+    <h2 class="text-center" style="color: #6d7fcc;">Patient Registration</h2>
+  <div class="form">
+    <form [formGroup]="registerForm" class="form" (ngSubmit)="onSubmit()" >
+        <div class="form-group ">
+          <div class="col-8">
+              <label for="name">Patient name:</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Enter Patient Name" name="name" 
+              title="Please include character Only" autocomplete="off" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-8">
+            <label for="name">Patient age:</label>
+            <input type="number" class="form-control" autocomplete="off" formControlName="age" placeholder="Enter Patient Age" name="age" min="1" max="110" required>
+          </div>
+        </div>
+        <div class="form-group"> 
+          <div class="col-8">
+            <label for="name">Aadhar Number</label>
+            <input type="number" class="form-control" autocomplete="off" formControlName="aadharNumber" autocomplete="off" placeholder="Enter Aadhar number" name="aadharNumber" 
+              min="100000000000" max="999999999999"
+              minlength="12" maxLength="12" title="Aadhar Card Number" requried>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-8">
+            <label>Select Ailment</label>
+            <select class="form-select form-select mb-3"  aria-label="form-select example" formControlName="ailment">
+                <option selected value="">--Select--</option>
+                <option *ngFor="let a of ailment" value="{{a}}">{{a}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-8">
+            <label>Select Package</label>
+            <select formControlName="treatmentPackageName" class="form-select form-select mb-3" aria-label=".form-select example">
+                <option selected value="">--Select--</option>
+                <option *ngFor="let pack of package" value="{{pack}}">{{pack}}</option>
+            </select>
+          </div>
+        </div>
+        
+        <label for="name">Commencement Date:</label>
+        <div class="form-group">
+          <div class="col-8">
+            <input class="form-control" autocomplete="off" formControlName="treatmentCommencementDate" id="datepicker" type="date" [min]="getToday()" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-blue">Submit</button> 
+        <button type="reset" class="btn btn-blue">Reset</button>
+      </form>
+      <br>
+      <div *ngIf="isSuccess" class="alert alert-success col-6 form" role="alert">
+        Registration Successful! check treatment plan for more info.
+      </div>
+      <div *ngIf="isFailure" class="alert alert-danger col-6 form" id="commencementDate" role="alert">
+        {{FailureMsg}}
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

@@ -1,0 +1,19 @@
+.btn-blue {
+    background-color: #6d7fcc;
+    width: 150px;
+    color: #fff;
+    border-radius: 2px;
+    margin-right: 22px;
+    margin-top: 10px;
+}
+
+.form-group
+{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.form
+{
+    margin-left: 15%;
+}
+

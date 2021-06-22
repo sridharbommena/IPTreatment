@@ -1,0 +1,30 @@
+.drop
+{
+    width: 60%;
+    margin-left: 18%;
+    margin-top: 30px;
+}
+.btn-blue {
+    background-color: #6d7fcc;
+    width: 150px;
+    color: #fff;
+    border-radius: 2px;
+    margin-right: 22px;
+    margin-top: 10px;
+}
+table, th, td {
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left: 18%;
+
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+.error
+{
+    margin-left: 18%;
+}

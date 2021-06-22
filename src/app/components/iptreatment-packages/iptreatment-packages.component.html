@@ -1,0 +1,59 @@
+<div id="content">
+
+    <h3 class="text-center" style="color: #6d7fcc;">Service Packages</h3><br>
+
+    <form [formGroup]="searchOptions" class="form" (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+            <div class="col-6">
+                <label>Select Ailment</label>
+                <select class="form-control" formControlName="ailment_name">
+                    <option selected value="">--Select--</option>
+                    <option *ngFor="let a of ailment" value="{{a}}">{{a}}</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group mb-3">
+            <div class="col-6">
+                <label>Select Package</label>
+                <select class="form-control" formControlName="package_name">
+                    <option selected value="">--Select--</option>
+                    <option *ngFor="let pack of package" value="{{pack}}">{{pack}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-blue" />
+            <input type="button" value="Clear" (click)="clearFilters()" class="btn btn-blue clear" />
+        </div>
+    </form>
+    <br>
+    <hr/>
+    <br>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th rowspan="2">ID</th>
+                <th rowspan="2">Ailment</th>
+                <th colspan="4" class="left-border center">Package Details</th>
+            </tr>
+            <tr>
+                <th class="left-border">Name</th>
+                <th>Test detail</th>
+                <th>Cost</th>
+                <th>Duration in weeks</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let package of filteredPackages">
+                    <td>{{package.treatmentPackageId}}</td>
+                    <td>{{package.ailmentCategory}}</td>
+                    <td>{{package.packageDetail.treatmentPackageName}}</td>
+                    <td>{{package.packageDetail.testDetails}}</td>
+                    <td>{{package.packageDetail.cost}}</td>
+                    <td>{{package.packageDetail.treatmentDuration}}</td>
+                </tr>
+        </tbody>
+    </table>
+    </div>

@@ -1,0 +1,29 @@
+<div>
+    <h3 class="text-center" style="color: #6d7fcc;">List Of Specialists</h3>
+    <br>
+    <div>
+        <table *ngIf="dataAvailable" class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Specialists Name</th>
+                    <th>Area Of Expertise</th>
+                    <th>Experience In Years</th>
+                    <th>Contact Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let specialist of specialists">
+                    <td>{{specialist.specialistId}}</td>
+                    <td>{{specialist.name}}</td>
+                    <td>{{specialist.areaOfExpertise}}</td>
+                    <td>{{specialist.experienceInYears}}</td>
+                    <td>{{specialist.contactNumber}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="isFailure" class="alert alert-danger col-6 form" id="errorMessage" role="alert">
+            {{FailureMsg}}
+        </div>
+    </div>
+</div>

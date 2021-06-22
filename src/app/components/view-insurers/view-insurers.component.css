@@ -1,0 +1,10 @@
+.component
+{
+    margin-top: 50px;
+}
+
+#errorMessage
+{
+    margin-left: 25%;
+    margin-top: 10%;
+}

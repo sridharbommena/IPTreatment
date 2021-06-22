@@ -1,0 +1,27 @@
+<div class="component">
+      <h3 class="text-center" style="color: #6d7fcc;">List of Insurers</h3>
+      <br>
+        <table *ngIf="dataAvailable" class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Insurer Name</th>
+                <th scope="col">Insurer Package Name</th>
+                <th scope="col">Package Limit</th>
+                <th scope="col">Disbursement Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let insurer of insurers">
+                  <td>{{insurer.id}}</td>
+                  <td>{{insurer.insurerName}}</td>
+                  <td>{{insurer.insurerPackageName}}</td>
+                  <td>{{insurer.insurerPackageAmountLimit}}</td>
+                  <td>{{insurer.disbursementDuration}}</td>
+              </tr>
+            </tbody>
+        </table>
+        <div *ngIf="isFailure" class="alert alert-danger col-6 form" id="errorMessage" role="alert">
+          {{FailureMsg}}
+      </div>
+</div>

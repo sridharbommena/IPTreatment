@@ -1,0 +1,37 @@
+<div>
+    <h3 class="text-center" style="color: #6d7fcc;">Treatment Plan</h3>
+    <br>
+    <div>
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Patient Name</th>
+                    <th>Patient Age</th>
+                    <th>Package Name</th>
+                    <th>Test Details</th>
+                    <th>Cost</th>
+                    <th>Specialist</th>
+                    <th>Commencement Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let treatment of treatmentPlan">
+                    <td class="counterCell"></td>
+                    <td>{{treatment.patientDetails.name}}</td>
+                    <td>{{treatment.patientDetails.age}}</td>
+                    <td>{{treatment.packageName}}</td>
+                    <td>{{treatment.testDetails}}</td>
+                    <td>{{treatment.cost}}</td>
+                    <td>{{treatment.specialist}}</td>
+                    <td>{{treatment.treatmentCommenceDate}}</td>
+                    <td>{{treatment.treatmentEndDate}}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

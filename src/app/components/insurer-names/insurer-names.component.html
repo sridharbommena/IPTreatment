@@ -1,0 +1,39 @@
+<div>
+
+    <h2 class="text-center" style="color: #6d7fcc;" >Select Insurer</h2>
+
+    <div class="drop">
+        <form [formGroup]="insurerName" (ngSubmit)="handleSubmit()" >
+        <select *ngIf="insurerNames.length > 0" formControlName="insurer" class="form-select form-select mb-3" aria-label=".form-select example">
+            
+             <option value="" disabled selected>--Select Insurer--</option>
+            <option *ngFor="let name of insurerNames">{{name.insurerName}}</option>
+        </select>
+        <input type="submit" value="Intiate Claim" class="btn btn-blue" />
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div *ngIf="isFailure" class="alert alert-danger col-6 form error" role="alert">
+        {{errorMessage}}
+      </div>
+
+    <div *ngIf="displayTable">
+        <table class="table table-bordered text-center" >
+            <tr>
+                <th>Patient Name</th>
+                <td>{{patientName}}</td>
+            </tr>
+            <tr>
+                <th>Insurer Name</th>
+                <td>{{insurer.value}}</td>
+            </tr>
+            <tr>
+                <th>Balance Amount to be paid</th>
+                <td>{{balanceAmountToBePaid}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
